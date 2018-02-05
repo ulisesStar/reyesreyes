@@ -1,18 +1,10 @@
-.objeto(tweeninit)
-.animacion(layout="row" layout-align="center center" botones)
-    .texto-container
-        .texto
-            #texto1
-                h1 La primera impresión se da a los 4 segundos
-        .texto
-            #texto2
-                h1 En una página de internet es igual
-        .texto
-            #texto3
-                h1 Nuestas páginas web hechas a medida de cada cliente
-        .texto
-            #texto4
-                h1 y estan optimizadas para atraer clientes que buscan lo que ofreces
-        .texto
-            #texto5
-                h1 Como tu que buscabas una página de internet
+.home(style="background-image : url('img/background.jpeg')")
+	.points(style="background-image : url('img/point.png')")
+	.central(layout="row" layout-align="center center")
+		md-button.left(ng-click="cambiar(-1)" hide-xs)
+			md-icon keyboard_arrow_left
+		main.page(ui-view="main" layout="row" layout-align="center center" flex="90" flex-xs="90" flex-sm="70")
+		md-button.right(ng-click="cambiar(1)" hide-xs)
+			md-icon keyboard_arrow_right
+	.opciones(layout="row" layout-align="center center")
+		include ../../partials/nav

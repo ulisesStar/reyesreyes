@@ -1,0 +1,19 @@
+.prospecto-content
+    md-card-content
+        form(ng-submit="nuevoProspecto(prospecto)" layout="column")
+            h4 Proporcionanos tus datos, para poder darle seguimiento a tu duda
+            md-card-content(layout="column")
+                md-input-container
+                    label Nombre
+                    input(ng-model="prospecto.nombre" required)
+                md-input-container
+                    label Apellido
+                    input(ng-model="prospecto.apellido" required)
+                md-input-container
+                    label Correo
+                    input(ng-model="prospecto.correo" required)
+                md-input-container
+                    label Teléfono
+                    input(ng-model="prospecto.telefono" required)
+            md-button(type="submit")
+                | Enviar

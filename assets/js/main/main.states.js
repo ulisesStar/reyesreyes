@@ -1,98 +1,67 @@
-app.run(['$rootScope', '$state', '$stateParams', function ($rootScope, $state, $stateParams) {
-	$rootScope.$state = $state;
-	$rootScope.$stateParams = $stateParams;
-}]);
+app.run([
+    '$rootScope',
+    '$state',
+    '$stateParams',
+    function($rootScope, $state, $stateParams) {
+        $rootScope.$state = $state;
+        $rootScope.$stateParams = $stateParams;
+    }
+]);
 
-app.config(['$urlRouterProvider', '$stateProvider', function ($urlRouterProvider, $stateProvider) {
+app.config([
+    '$urlRouterProvider',
+    '$stateProvider',
+    function($urlRouterProvider, $stateProvider) {
 
-	$urlRouterProvider.otherwise('/');
-	$stateProvider
+        function template(url, template, controller, oz, params) {
+            let obj = {
+                url: url,
+                params: params,
+                views: {
+                    'main': {
+                        templateUrl: template,
+                        controller: controller + ' as ctrl'
+                    }
+                },
+                resolve: {
+                    loadMyCtrl: [
+                        '$ocLazyLoad',
+                        function($ocLazyLoad) {
+                            return $ocLazyLoad.load([oz]);
+                        }
+                    ]
+                }
+            }
+            return obj
+        }
 
-	.state('home', {
-		url: '/',
-		views: {
-			'main': {
-				templateUrl: '/main/home'
-			}
-		}
-	}).state('user', {
-		url: '/user',
-		views: {
-			'main': {
-				templateUrl: '/user/main'
-			}
-		}
-	}).state('user.profile', {
-		url: '/profile',
-		views: {
-			'main': {
-				templateUrl: '/user/profile'
-			}
-		}
-	}).state('user.paymentstatus', {
-		url: '/paymentstatus',
-		views: {
-			'main': {
-				templateUrl: '/main/user/paymentstatus'
-			}
-		}
-	}).state('user.paymentmethod', {
-		url: '/metododepago',
-		views: {
-			'main': {
-				templateUrl: '/main/user/paymentmethod'
-			}
-		}
-	}).state('user.historical', {
-		url: '/pagohistorico',
-		views: {
-			'main': {
-				templateUrl: '/main/user/historical'
-			}
-		}
-	}).state('persona', {
-		url: '/persona/:idPersona',
-		views: {
-			'main': {
-				templateUrl: '/catalogo/persona',
-				controller: function ($scope, $stateParams, $http) {
-					var idPersona = $stateParams.idPersona;
-					$http.get('/data/personasData/' + idPersona ).then(function(persona){
-						// album.persona = persona.data;
-						$scope.personaSeleccionada = persona.data;
-						console.log($scope.personaSeleccionada);
-					});
-				}
-
-			}
-		}
-	}).state('yellow', {
-		url: '/yellow',
-		views: {
-			'main': {
-				templateUrl: '/colors/yellow'
-			}
-		}
-	}).state('purple', {
-		url: '/purple',
-		views: {
-			'main': {
-				templateUrl: '/colors/purple'
-			}
-		}
-	}).state('blue', {
-		url: '/blue',
-		views: {
-			'main': {
-				templateUrl: '/colors/blue'
-			}
-		}
-	}).state('green', {
-		url: '/green',
-		views: {
-			'main': {
-				templateUrl: '/colors/green'
-			}
-		}
-	});
-}]);
+        $urlRouterProvider.otherwise('/');
+        $stateProvider
+        .state('home', {
+                url: '/',
+                redirectTo: 'home.consulta',
+                views: {
+                    'main': {
+                        templateUrl: '/main/home',
+                        controller: 'homeCtrl as ctrl'
+                    }
+                },
+                resolve: {
+                    loadMyCtrl: [
+                        '$ocLazyLoad',
+                        function($ocLazyLoad) {
+                            return $ocLazyLoad.load(['mainhome']);
+                        }
+                    ]
+                }
+            })
+        .state('home.prospecto', template('prospecto', '/main/consultachilds/prospecto', 'prospectoCtrl', 'mainprospecto', { 'topico' : null}))
+        .state('home.respuesta', template('respuesta', '/main/consultachilds/respuesta', 'respuestaCtrl', 'mainrespuesta', { 'topico' : null}))    
+        .state('home.nosotros', template('nosotros', '/main/nosotros', 'nosotrosCtrl', 'mainnosotros'))
+        .state('home.valores', template('valores', '/main/valores', 'valoresCtrl', 'mainvalores'))
+        .state('home.consulta', template('consulta', '/main/consulta', 'consultaCtrl', 'mainconsulta'))
+        .state('home.servicios', template('servicios', '/main/servicios', 'serviciosCtrl', 'mainservicios'))
+        .state('home.servicio', template('servicio/:id', '/main/servicio', 'servicioCtrl', 'mainservicio', { 'id' : null}))
+        .state('home.testimonios', template('testimonios', '/main/testimonios', 'testimoniosCtrl', 'maintestimonios'))
+    }
+]);

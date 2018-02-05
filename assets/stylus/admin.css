@@ -1,0 +1,13 @@
+.croppie-container {
+  max-height: 240px;
+}
+.logo {
+  width: 30%;
+  margin: 0 auto;
+}
+.logo span {
+  color: rgba(0,0,0,0.87) !important;
+}
+.logo form {
+  width: 100%;
+}

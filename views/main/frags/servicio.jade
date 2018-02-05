@@ -1,0 +1,10 @@
+.servicio-one
+    h1 {{servicio.nombre}}           
+    .contenido(layout="row")
+        md-card-content
+            p(ng-bind-html="servicio.descripcion") 
+            md-list
+                md-list-item(ng-repeat="subservicio in servicio.subservicios")
+                    md-icon.md-avatar-icon(style="margin: 2px") keyboard_arrow_right
+                    .md-list-item-text
+                        p {{subservicio.nombre}}

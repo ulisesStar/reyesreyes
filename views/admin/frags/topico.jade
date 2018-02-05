@@ -1,0 +1,28 @@
+md-card
+	md-toolbar
+		.md-toolbar-tools
+			h4 Información Básica
+	md-card-content
+		form(layout="column" ng-submit="editarTopico(topico)")
+			md-input-container(flex)
+				label Escribe Aqui
+				textarea(ng-model="topico.nombre" md-maxlength="1500" rows="4" md-select-on-focus required)
+			md-input-container(flex)
+				label Selecciona un Servicio
+				md-select(ng-model="topico.IdServicio")
+					md-option(ng-value="servicio.id" ng-repeat="servicio in servicios") {{servicio.nombre}}
+					div(layout="row")
+			md-button(type="submit" md-colors="{background: 'green'}")
+				md-icon save
+md-card
+	md-toolbar
+		.md-toolbar-tools
+			h4 Respuesta
+	md-card-content
+	form(layout="column" ng-submit="focusRespuesta(respuesta)")
+		text-angular(ng-model="respuesta.respuesta")
+		//- md-input-container(flex)
+		//- 	label Escribe Aqui
+		//- 	textarea(ng-model="respuesta.respuesta" md-maxlength="1500" rows="4" md-select-on-focus required)
+		md-button(type="submit" md-colors="{background: 'green'}")
+			md-icon save

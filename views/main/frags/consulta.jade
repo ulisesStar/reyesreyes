@@ -1,0 +1,18 @@
+.consulta
+    .titulo-consulta
+        h1 REALIZA TU CONSULTA GRATIS...            
+    .contenido(layout="row")
+        .panel#panel
+            md-expansion-panel#circulo(md-component-id='{{$index}}' ng-repeat="elemento in topicos" ng-click="collapse(elemento)")
+                md-expansion-panel-collapsed(style="background-color: #deb887")
+                    .md-title
+                        p {{elemento.nombre}}
+
+                    md-expansion-panel-icon
+                md-expansion-panel-expanded(style="background-color: #deb887")
+                    md-expansion-panel-header 
+                        h3 {{elemento.nombre}}
+                    md-expansion-panel-content(ng-bind-html="elemento.respuesta.respuesta")
+                    md-expansion-panel-footer
+                        md-button(ng-click="$panel.collapse()")
+                            md-icon keyboard_arrow_up

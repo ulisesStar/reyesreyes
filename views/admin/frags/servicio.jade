@@ -1,0 +1,47 @@
+md-card
+	md-toolbar
+		.md-toolbar-tools
+			h4 Información Básica
+	md-card-content
+		form(layout="column" ng-submit="editarServicio(servicio)")
+			md-input-container(flex)
+				label Nombre
+				textarea(ng-model="servicio.nombre" md-maxlength="50" rows="4" md-select-on-focus required)
+			text-angular(ng-model="servicio.descripcion")
+			md-button(type="submit" md-colors="{background: 'green'}")
+				md-icon save
+md-card
+	md-toolbar
+		.md-toolbar-tools
+			h4 Subservicios
+			span(flex)
+			md-button(ng-click="aparecer = !aparecer")
+				md-icon add
+				| Nuevo
+	form(ng-if="aparecer" ng-submit="submitSub(sub)")
+		.Subservicios(layout="column")
+			md-input-container(flex)
+				label Nombre
+				input(ng-model="sub.nombre" required)
+			text-angular(ng-model="sub.descripcion")
+		.botones(layout="row")
+			md-button(type="submit" md-colors="{background: 'green'}" flex)
+				md-icon save
+			md-button(ng-click="limpiar()" md-colors="{background: 'red'}" flex)
+				md-icon clear
+	md-divider
+	md-list
+		md-list-item(ng-repeat="sub in subs")
+			.md-list-item-text
+				strong {{sub.nombre}}
+			md-fab-toolbar(md-open="false" count="0"  md-direction="left" flex)
+				md-fab-trigger
+					md-button
+						md-icon more_vert
+				md-toolbar
+					md-fab-actions(layout="row")
+						md-button(md-colors="{background: 'green'}" ng-click="focusSub(sub)")
+							md-icon edit
+						md-button(md-colors="{background: 'red'}" ng-click="eliminarSub(sub,$index)")
+							md-icon clear
+			md-divider

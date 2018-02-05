@@ -1,0 +1,392 @@
+cafeclaro = #deb887
+fondo = #FFAE68
+
+mobile = "(max-width: 600px)"
+compu = "(min-width: 600px)"
+
+.layout-row>div
+	max-height inherit !important
+      
+main
+	position relative
+
+header
+	position fixed
+	z-index 1
+	width 100%
+	.nav
+		margin 0px
+		width 100%
+		height 50px
+		padding 5px 0
+		.nav-content
+			padding 0 20px
+			.logo
+				display flex
+				md-icon
+					margin inherit
+					color white
+					cursor pointer
+					&.conHover
+						transform scale(.9)
+							transition(300ms, 0)
+				h1
+					margin 0px
+					margin-right 10px
+					color white
+					@media mobile
+						font-size 15px
+
+
+					
+
+md-dialog 
+	width 28vw !important
+	background-color rgba(255,255,255,0.9)
+
+
+
+.prospecto-content
+	md-card-content
+		form
+			margin 20px
+			.md-button 
+				background green
+			md-card-content
+				md-input-container
+					margin 0px !important
+
+
+.home
+	height inherit !important
+	position relative
+	//height 100vh
+	@media mobile
+		height inherit !important
+		position relative
+	background-size cover
+	.points
+		width 100%
+		height 100%
+		position absolute
+	.central
+		//height calc(100vh - 100px)
+		
+		@media mobile
+			height inherit !important
+		
+		.page
+			max-height inherit !important
+			@media mobile
+				max-height inherit !important
+
+		.md-button
+			border 4px solid white
+			height 77px
+			width 77px
+			&.left
+				border-radius 30px 0px 30px 0px
+				@media mobile
+					min-width inherit
+					height 40px
+					width 70px
+					margin 0 auto
+					transform scale(.7)
+			    	margin-left 1%
+
+				
+			&.right
+				border-radius 0px 30px 0px 30px
+				@media mobile
+					min-width inherit
+					height 40px
+					width 70px
+					margin 0 auto
+					transform scale(.7)
+					margin-left 1%
+
+			md-icon
+				transform scale(2.8)
+				color white
+	.opciones
+		height 150px
+		md-radio-group
+			transform scale(1.8)
+			
+
+
+
+
+
+
+
+.consulta
+	margin-top 5%
+	@media mobile 
+		margin-top 10%
+	.titulo-consulta
+		h1
+			color white
+			text-align center
+			@media mobile
+				font-size 15px
+
+
+
+	.panel
+		md-expansion-panel
+			background inherit !important
+			opacity 0.9
+			md-expansion-panel-collapsed
+				md-icon
+					margin-right 0
+				.md-title
+					max-width inherit
+		
+			.md-expansion-panel-header-container
+				background inherit !important
+				line-height 19px
+				
+			md-expansion-panel-content
+				background-color white
+			
+			.md-expansion-panel-footer-container
+				background inherit !important
+				
+				.md-button
+					border inset
+					height 0px
+					
+				md-icon
+					transform scale(1.8) !important
+					color inherit !important
+
+
+.valores
+	margin-top 5%
+	@media mobile 
+		margin-top 10%
+	h1
+		color white
+		text-align center
+		@media mobile 
+			font-size 15px
+
+	.contenido
+		@media mobile 
+			min-height 60%
+		.portafolio
+			margin 0 1vw
+			.portafolio-img
+				@media mobile
+					height 126px
+				height 105px
+				width 100%
+				background-size cover
+				background-position center center
+			.portafolio-text
+				background-color cafeclaro
+				opacity .7
+				
+				h2
+					padding  0 15px
+					margin 5px
+				p
+					font-size 13px
+					margin 0px
+					padding 11px
+					text-align justify
+					
+	.razones
+		border 1px solid cafeclaro
+		background-color: rgba(68, 25, 0, 0.6);
+		@media mobile
+			max-width inherit !important
+		p
+			color white
+			font-size 18px
+			text-align justify
+		span 
+			font-size 24px
+		.md-avatar-icon
+			background-color cafeclaro
+	.testimonios
+		background-color cafeclaro
+		opacity .9
+		.slider
+			height 200px
+			.item
+				margin 40px
+				height 120px
+				margin-top 1%
+				p
+					font-style italic
+					text-align right
+					font-size 14px
+.servicios
+	width 100%
+	h1 
+		color white
+		text-align center
+
+
+.servicio-one
+	.titulo-servicio
+		h1 
+			color white
+			text-align center
+	.contenido
+		md-card-content
+			background-color cafeclaro
+			opacity .95
+			
+			p
+				color white
+
+.mapa
+	@media mobile 
+		min-height inherit !important
+	h3 
+		color white
+		text-align center
+	
+	.ubicacion
+		md-icon 
+			color cafeclaro
+			margin-left 0
+			margin-right 0
+		h3
+			color white
+			text-align center
+		h4
+			color white
+			text-align justify
+
+.formulario
+	h3 
+		color white
+		text-align center
+		
+	form
+		width 100%
+		border 1px solid cafeclaro
+		
+		.md-padding
+			md-input-container
+				margin 0px !important
+				label 
+					color cafeclaro
+				.md-input
+					border-color cafeclaro
+		.md-button 
+			border 1px solid white
+			margin-left 30%
+			width 25%
+			
+			@media mobile 
+				margin-left 33%
+	
+			span
+				color white
+
+	.mensaje
+		border 1px solid cafeclaro
+		margin 20% auto
+		md-card-content
+			h1 
+				color cafeclaro
+		
+.nosotros
+	@media mobile 
+		margin-top 10%
+		
+	margin-top 8%
+	h1 
+		height 3%
+		color white
+		text-align center
+		@media mobile
+				font-size 15px
+	.contenido
+		p 
+			color white
+			text-align center
+			font-size 20px
+			@media mobile
+				text-align justify
+				font-size 15px
+	
+	.nosotros-container
+		margin-top 4%
+		
+		.parrafo
+			@media mobile
+				opacity 0.75
+				max-width inherit !important
+			background-color cafeclaro
+			opacity 0.9
+			padding 3%
+			text-align justify
+			color white
+			h4
+				font-size 21px
+				
+			p
+				font-size 16px
+				
+		.foto
+			@media mobile
+				width 70%
+				max-width inherit 
+				opacity 0.95
+			//background-color white
+			opacity 0.95
+			//border 1px solid cafeclaro
+			img
+				@media mobile
+					height 37%
+					width 100%
+				height 50%
+				width 100%
+	
+
+	.identidad
+		margin-top 8%
+		h1 
+			color white
+			text-align center
+			@media mobile
+				font-size 15px
+		.contenido
+			
+			.valor
+				padding 1%
+				border 1px solid cafeclaro
+				margin-right 1%
+				background-color cafeclaro
+				opacity 0.85
+				@media mobile
+					padding 3%
+					margin-bottom 5%
+					opacity 0.85
+					min-height inherit
+				h1
+					font-size 23px
+				p
+					font-size 15px
+.servicio-one
+	@media mobile 
+		margin-top 10%
+		
+	margin-top 8%
+	h1 
+		height 3%
+		color white
+		text-align center
+		@media mobile
+				font-size 15px
+	.contenido
+		opacity 0.85
+		md-card-content
+			padding 2%
+		

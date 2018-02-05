@@ -1,7 +1,32 @@
-p 
-    strong state: 
-    | {{$state.current.name}}
-.starbrand(href="https://www.starbrand.mx")
-    p Desarrollado por
-    md-icon(md-svg-icon="img/starbrand.svg")
-md-button(ng-click="iniciosesion($event)" md-colors="{background: 'cyan'}") Admin
+.contenedor(flex="90" layout="row" layout-xs="column")
+	.mapa(flex)
+		h3 Encuéntranos
+		.mapa-content.md-padding
+			ui-gmap-google-map(center='map.center' zoom='map.zoom' options="options")
+				ui-gmap-marker(coords="marker.coordenadas" idkey="$index" ng-repeat="marker in markers")
+		.ubicacion(layout="column")
+			h3 Dirección y Teléfono
+			.direccion(layout="row")
+				md-icon location_on
+				h4 WTC Montecito 38, Piso 28, Oficina 16, Col. Napoles Del. Benito Juarez, Ciudad de México
+			.telefono(layout="row")
+				md-icon call
+				h4 52 1 33 1554 6419
+	.formulario(flex-sm="40" flex-xs)
+		h3 Contáctanos
+		form(ng-submit="nuevoContacto(contacto)" ng-hide="listo" layout-align="center center")
+			.md-padding(layout="column")
+				md-input-container(flex)
+					label Nombre
+					input(ng-model="contacto.nombre" style="color:white;" required)
+				md-input-container(flex required)
+					label E-mail
+					input(ng-model="contacto.email" style="color:white;" required)
+				md-input-container(flex)
+					label Mensaje
+					textarea(ng-model="contacto.mensaje" md-maxlength="1000" rows="5" style="color:white;" required)
+			md-button(type="submit" flex)
+				| Enviar
+		.mensaje(ng-show="listo")
+			md-card-content
+				h1(style="text-align: center") Muchas Gracias, muy pronto nos comunicaremos contigo.

@@ -1,0 +1,44 @@
+div(layout="row" flex)
+	md-card(flex)
+		md-toolbar
+			.md-toolbar-tools
+				h4 Información Básica
+		md-card-content
+			form(layout="column" ng-submit="editarAbogado(abogado)")
+				md-input-container(flex)
+					label Nombre
+					textarea(ng-model="abogado.nombre" md-maxlength="150" rows="4" md-select-on-focus required)) 
+				md-input-container(flex)
+					label Historia
+					textarea(ng-model="abogado.historia" md-maxlength="1500" rows="4" md-select-on-focus required)
+				md-button(type="submit" md-colors="{background: 'green'}")
+					md-icon save
+	md-card(flex)
+		md-toolbar
+			.md-toolbar-tools
+				h4 Foto de Perfil
+				span(flex)
+				md-button(ng-click="abrir = !abrir")
+					md-icon	portrait
+					| Nueva
+		md-card-content
+			div(layout="row" flex)
+				form(layout="column" ng-submit="focusPerfil(foto)" flex="40" ng-if="abrir")
+					.dropify-container(ng-init="Dropify()" flex ng-hide="inputImage")
+							input.dropify(type="file" data-default-file="Imagen del Nivel" ng-model="foto.imagen" base-sixty-four-input maxsize="5120" data-max-file-size="1000K" accept="image/*" style="padding:0px;")
+					.croppie-container(flex ng-show="inputImage")
+						ng-croppie(src="inputImage"
+							ng-model='foto.imagen'
+							boundry="{w: 200, h: 200}"
+							viewport="{w: 100, h: 100}"
+							mousezoom="true" 
+							zoom="true" 
+							orientation="90"
+							type="rectangle")
+					md-button(type="submit" md-colors="{background: 'green'}")
+						md-icon save
+				div(flex="60" style="padding-left: 95px")
+					md-grid-list(md-cols="4" md-row-height="1:1" flex="70" flex-md="70" flex-sm="70" flex-xs="100")
+						md-grid-tile(md-colspan="1" md-rowspan="1")
+							.img-container(layout="column")
+								img(src="{{abogado.foto.imagen}}")

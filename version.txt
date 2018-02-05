@@ -1,0 +1,9 @@
+#1 DIC - Ulises - Se modifico este archivo para meter textArea dentro del Admin en servicios
+#7 DIC - Cesar  - Se modifico datos del nav
+#8 DIC - Monica - Se modifico falta de letra en correo y se volvio a subir a google.
+#11 DIC - Cesar - Se modifico los css del main en la parte del .home y .home-container lineas 111-129 para centrar el formulario de topicos
+                    y se agrego el texto de "Nosotros" en el inicio
+#12 DIC - Cesar - Se compusieron los margenes dentro de los css lineas 47-50 se quito el width 100% y se agrego mision, vision y objetivo en Nosotros
+#14 DIC - Cesar - Se cambio el color del nav en los states de "servicios" y "Nosotros" a color negro
+#15 DIC - Cesar - Se termino de hacer responsive la pagina.
+#30 DIC - Ulises - Se creo un slider para decir que somos un Bufette

@@ -14,6 +14,9 @@ app.service('Topicos', function() {
     this.obtenerConRespuesta = function(id) { return axios('/data/respuestas/' + id) }
     this.editarRespuesta = function(respuesta) { return axios.put('/data/editarRespuesta/' + respuesta.id, respuesta) }
     this.crearRespuesta = function(id, respuesta) { return axios.post('/data/respuestas/' + id, respuesta) }
+
+	this.busqueda = function(item) { return axios('/data/Topico/busqueda/' +  item) }
+
 	this.filtro = function(peticion) { return axios.post('/data/filtro', peticion) }
 
 });

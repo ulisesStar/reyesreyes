@@ -1,18 +1,34 @@
-.consulta
+.consulta(style="background-image : url ('img/consulta.jpg')")
     .titulo-consulta
-        h1 REALIZA TU CONSULTA GRATIS...            
+        h1.primero EN REYES REYES QUEREMOS DARTE EL MEJOR SERVICIO
+        h1.segundo CONTESTAMOS TUS DUDAS SOBRE EL SISTEMA PENAL EN LA CIUDAD DE MEXICO          
     .contenido(layout="row")
         .panel#panel
-            md-expansion-panel#circulo(md-component-id='{{$index}}' ng-repeat="elemento in topicos" ng-click="collapse(elemento)")
-                md-expansion-panel-collapsed(style="background-color: #deb887")
-                    .md-title
-                        p {{elemento.nombre}}
-
-                    md-expansion-panel-icon
-                md-expansion-panel-expanded(style="background-color: #deb887")
-                    md-expansion-panel-header 
-                        h3 {{elemento.nombre}}
-                    md-expansion-panel-content(ng-bind-html="elemento.respuesta.respuesta")
-                    md-expansion-panel-footer
-                        md-button(ng-click="$panel.collapse()")
-                            md-icon keyboard_arrow_up
+            .panel-contenido
+                md-autocomplete(flex
+                    md-selected-item="ctrl.autocomplete.item"
+                    md-selected-item-change="ctrl.autocomplete.seleccion(item)"
+                    md-search-text="ctrl.autocomplete.busqueda"
+                    md-search-text-change="ctrl.autocomplete.buscar(ctrl.autocomplete.busqueda)"
+                    md-items="item in ctrl.autocomplete.filtrar(ctrl.autocomplete.busqueda)" 
+                    md-item-text="item.nombre" 
+                    md-min-length="0" 
+                    placeholder="Busqueda Rápida, Escribe lo que quieras...")
+                    md-item-template
+                        strong {{item.modelo}}
+                        span {{item.nombre}} {{item.apellido}}
+                md-expansion-panel#circulo(md-component-id='{{elemento.key}}' ng-repeat="elemento in ctrl.topicos" ng-if="elemento.display")
+                    md-expansion-panel-collapsed(ng-click="elemento.abrir()")
+                        md-expansion-panel-icon
+                        .md-title
+                            p {{elemento.nombre}}
+                    md-expansion-panel-expanded
+                        md-expansion-panel-header 
+                            h3 {{elemento.nombre}}
+                        md-expansion-panel-content(ng-bind-html="elemento.respuesta")
+                        md-expansion-panel-footer
+                            md-button(ng-click="$panel.collapse(); elemento.cerrar()")
+                                md-icon keyboard_arrow_up
+                    md-divider
+                cl-paging(cl-pages="paging.total" cl-steps="6" cl-page-changed="paging.onPageChanged()" cl-align="start start" cl-current-page="paging.current")
+            .opacity(style="background-image :  url('img/consulta.jpg')")

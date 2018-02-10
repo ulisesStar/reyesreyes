@@ -118,3 +118,20 @@ ex.filtro = function(req, res, next) {
     });
 
 };
+
+
+ex.busqueda = function(req, res, next) {
+
+    var item = req.params.item;
+
+    topicos.findAll({
+        where : {
+            nombre : {
+                $like : '%' + item + '%'
+            }
+        }
+    }).then(function(result) {
+        res.status(200).jsonp(result);
+    });
+
+};

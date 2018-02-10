@@ -1,25 +1,36 @@
 .nosotros
 	h1 EL DESPACHO
-	.contenido(layout="row" layout-align="center center")
-		p Reyes Reyes Abogados es un despacho Jurídico comprometido con el deber profesional, consolidado por una estructura de Licenciados en Derecho, que se destaca por su honestidad, innovación, dinamismo, y amplia experiencia en las diversas áreas del Derecho.
-	.nosotros-container(layout="row" layout-align="space-around center" layout-xs="column")
-		.foto(flex="30")
-			img(src="img/german.png")
-		.parrafo(flex="70")
-			h4 German Reyes Reyes
-			p Abogado especialista en materia penal y Derecho Militar, especializado en el Instituto Nacional de Ciencias Penales (INACIPE) y en el United States Defense Institute of Internacional Legal Studies
-			p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus consectetur, animi aspernatur aliquid soluta a explicabo. Expedita, cumque! Molestias minima possimus aliquam fugiat praesentium aut reprehenderit accusantium asperiores dolores obcaecati!
-			p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam sint consectetur, in placeat tempora laboriosam, delectus nobis rerum, inventore omnis voluptatem aut. Eligendi porro nesciunt nostrum laborum labore veniam nulla.
-
-	.identidad(layout-align="space-around center")
-		h1 NUESTRA IDENTIDAD
-		.contenido(layout="row" layout-xs="column")
-			.valor(flex)
-				h1 MISIÓN
-				p Dar un servicio de asesoría y defensa legal objetivo y honesto.
-			.valor(flex)
-				h1 OBJETIVO
-				p Brindar un servicio legal bajo los principios de honestidad, profesionalismo, eficiencia y objetividad.
-			.valor(flex)
-				h1 VISIÓN
-				p Aportar a la sociedad una actividad profesional que se sume al equilibrio en la justicia y el orden social.
+	//- .contenido(layout="row" layout-align="center center")
+	//- 	p Reyes Reyes Abogados es un despacho Jurídico comprometido con el deber profesional, consolidado por una estructura de Licenciados en Derecho, que se destaca por su honestidad, innovación, dinamismo, y amplia experiencia en las diversas áreas del Derecho.
+	.nosotros-container(layout-align="space-around center" layout-xs="column")
+		.informacion-container(layout="row")
+			.foto
+				img(src="img/german.png")
+			.parrafo
+				h4 Lic. German Reyes Reyes
+				.parrafo-content
+					p Abogado especialista en materia penal y Derecho Militar, especializado en el Instituto Nacional de Ciencias Penales (INACIPE) y en el United States Defense Institute of Internacional Legal Studies
+					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus consectetur, animi aspernatur aliquid soluta a explicabo. Expedita, cumque! Molestias minima possimus aliquam fugiat praesentium aut reprehenderit accusantium asperiores dolores obcaecati!
+					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam sint consectetur, in placeat tempora laboriosam, delectus nobis rerum, inventore omnis voluptatem aut. Eligendi porro nesciunt nostrum laborum labore veniam nulla.
+				.opacity(style="background-image :  url('img/nosotros.jpg')")
+		.identidad(layout-align="space-around center")
+			h1 NUESTRA IDENTIDAD
+			.contenido(layout="row" layout-xs="column")
+				.valor(flex)
+					.valor-content
+						h1 MISIÓN
+						p Dar un servicio de asesoría y defensa legal objetivo y honesto.
+					.opacity(style="background-image :  url('img/nosotros.jpg')")
+				.valor(flex)
+					.valor-content
+						h1 OBJETIVO
+						p Brindar un servicio legal bajo los principios de honestidad, profesionalismo, eficiencia y objetividad.
+					.opacity(style="background-image :  url('img/nosotros.jpg')")
+				.valor(flex)
+					.valor-content
+						h1 VISIÓN
+						p Aportar a la sociedad una actividad profesional que se sume al equilibrio en la justicia y el orden social.
+					.opacity(style="background-image :  url('img/nosotros.jpg')")
+//- svg(version='1.1', xmlns='http://www.w3.org/2000/svg')
+//- 	filter#blur
+//- 		fegaussianblur(stddeviation='6')

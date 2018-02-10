@@ -46,11 +46,13 @@ app.controller('mainCtrl', function ($scope, $state, $rootScope, $http, alertas,
     $scope.listo = false;
 
     $scope.nuevoContacto = function(contacto){
-        
+
         Prospecto.crear(contacto).then(res => {
             $scope.listo = true;
         })
-        
+
     }
+
+
 
 });

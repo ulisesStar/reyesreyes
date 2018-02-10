@@ -1,52 +1,58 @@
-.valores
-	h1 NUESTROS VALORES
-	.contenido(layout="row" layout-align="space-around center" layout-xs="column")
-		.portafolio#1(flex layout="row")
-			.portafolio-img(style="background-image : url('img/respeto.jpeg')")
-			.portafolio-text
-				h2 Respeto
-				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum animi ex, tempora velit sunt dolor.
-		.portafolio#2(flex layout="row")
-			.portafolio-img(style="background-image : url('img/justicia.jpeg')")
-			.portafolio-text
-				h2 Justicia
-				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum animi ex, tempora velit sunt dolor.
-		.portafolio#3(flex layout="row")
-			.portafolio-img(style="background-image : url('img/honestidad.jpeg')")
-			.portafolio-text
-				h2 Honestidad
-				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum animi ex, tempora velit sunt dolor.
-	h1 RAZONES PARA TRABAJAR CON NOSOTROS
-	.md-padding(layout="row" layout-xs="column")
-		.razones(layout-align="center center" flex="60")
-			md-list
-				md-list-item
-					.md-avatar-icon
-						span #1
-					.md-list-item-text
-						p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit aut cupiditate
-				md-list-item
-					.md-avatar-icon
-						span #2
-					.md-list-item-text
-						p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit aut cupiditate
-				md-list-item
-					.md-avatar-icon
-						span #3
-					.md-list-item-text
-						p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit aut cupiditate
-		.testimonios(layout-align="center center" flex="40" flex-xs="60")
-			.contenido(layout="row" layout-align="center center")
-				.slider
-					.item
-						h4 " Lorem ipsum dolor sit amet, consectetur adipisicing elit.".
-						p Ulises Gonzalez
-					.item
-						h4 " Lorem ipsum dolor sit amet, consectetur adipisicing elit.".
-						p Cesar Cordoba Morales 
-					.item
-						h4 " Lorem ipsum dolor sit amet, consectetur adipisicing elit.".
-						p Luis Malaga Matias 
-					.item
-						h4 " Lorem ipsum dolor sit amet, consectetur adipisicing elit.".
-						p Monica de Jesus Arenas Gutierrez
+.servicios-container(layout="row" layout-align="center center")
+	.valores(flex="70")
+		h1 NUESTROS VALORES
+		.contenido(layout="row" layout-align="space-around center" layout-xs="column")
+			.portafolio#1(flex layout="row")
+				.portafolio-img(style="background-image : url('img/respeto.jpeg')")
+				.portafolio-text
+					h2 Respeto
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum animi ex, tempora velit sunt dolor.
+				.opacity(style="background-image :  url('img/valores.jpg')")
+			.portafolio#2(flex layout="row")
+				.portafolio-img(style="background-image : url('img/justicia.jpeg')")
+				.portafolio-text
+					h2 Justicia
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum animi ex, tempora velit sunt dolor.
+				.opacity(style="background-image : url('img/valores.jpg')")
+			.portafolio#3(flex layout="row")
+				.portafolio-img(style="background-image : url('img/honestidad.jpeg')")
+				.portafolio-text
+					h2 Honestidad
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum animi ex, tempora velit sunt dolor.
+				.opacity(style="background-image : url('img/valores.jpg')")
+		.titulo-razones
+		.md-padding(layout="row" layout-xs="column" layout.sm="column")
+			.razones(layout-align="center center" flex="60")
+				md-list
+					h4 5 RAZONES PARA TRABAJAR CON NOSOTROS
+					md-list-item
+						.md-avatar-icon
+							span #1
+						.md-list-item-text
+							p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit aut cupiditate
+					md-list-item
+						.md-avatar-icon
+							span #2
+						.md-list-item-text
+							p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit aut cupiditate
+					md-list-item
+						.md-avatar-icon
+							span #3
+						.md-list-item-text
+							p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit aut cupiditate
+				.opacity(style="background-image : url('img/valores.jpg')")
+			.testimonios(layout-align="center center" flex="40" flex-xs="60")
+				.contenido(layout="row" layout-align="center center")
+					.slider
+						.item
+							h4 " Lorem ipsum dolor sit amet, consectetur adipisicing elit.".
+							p Ulises Gonzalez
+						.item
+							h4 " Lorem ipsum dolor sit amet, consectetur adipisicing elit.".
+							p Cesar Cordoba Morales 
+						.item
+							h4 " Lorem ipsum dolor sit amet, consectetur adipisicing elit.".
+							p Luis Malaga Matias 
+						.item
+							h4 " Lorem ipsum dolor sit amet, consectetur adipisicing elit.".
+							p Monica de Jesus Arenas Gutierrez

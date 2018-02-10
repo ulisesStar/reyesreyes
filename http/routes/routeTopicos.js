@@ -17,6 +17,9 @@ routeTopicos.route('/data/editarRespuesta/:id')
 routeTopicos.route('/data/filtro')
         .post(x.filtro);
 
+routeTopicos.route('/data/Topico/busqueda/:item')
+        .get(x.busqueda);
+
 routeTopicos.route('/data/Topicos/:id')
         .get(x.read)
         .put(x.update)

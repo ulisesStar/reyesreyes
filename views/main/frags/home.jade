@@ -1,10 +1,11 @@
-.home(style="background-image : url('img/background.jpeg')")
+.home
 	.points(style="background-image : url('img/point.png')")
-	.central(layout="row" layout-align="center center")
+	.central(layout="row" layout-align="space-around center")
 		md-button.left(ng-click="cambiar(-1)" hide-xs)
 			md-icon keyboard_arrow_left
-		main.page(ui-view="main" layout="row" layout-align="center center" flex="90" flex-xs="90" flex-sm="70")
+		main.page(ui-view="main" layout="row" layout-align="center center" flex="80" flex-xs="90" flex-sm="70")
 		md-button.right(ng-click="cambiar(1)" hide-xs)
 			md-icon keyboard_arrow_right
 	.opciones(layout="row" layout-align="center center")
 		include ../../partials/nav
+	main(class="background" ui-view="background" ng-class="ctrl.indicador === 1 ? 'pageleft' : 'pageright' ")

@@ -3,7 +3,7 @@
 	.central(layout="row" layout-align="space-around center")
 		md-button.left(ng-click="cambiar(-1)" hide-xs)
 			md-icon keyboard_arrow_left
-		main.page(ui-view="main" layout="row" layout-align="center center" flex="80" flex-xs="90" flex-sm="70")
+		main.page(ui-view="main" style="width: 100%" layout="row" layout-align="center center")
 		md-button.right(ng-click="cambiar(1)" hide-xs)
 			md-icon keyboard_arrow_right
 	.opciones(layout="row" layout-align="center center")

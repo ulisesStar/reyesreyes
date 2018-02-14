@@ -4,13 +4,11 @@ app.controller('consultaCtrl', function($scope, $window, $rootScope, $analytics,
 
     var self = this;
 
-    // var tl2 = new TimelineMax();
-    //
-    // tl2
-    // .fromTo($('.titulo-consulta .primero'), 2, {opacity: '1', fontSize : '50px'}, { opacity: '0', display : 'none', ease: Power2.easeIN}, "+=3")
-    // .fromTo($('.titulo-consulta .segundo'), 2, {opacity: '0', fontSize : '50px'}, { opacity: '1' , fontSize : '25px', ease: Power2.easeIN})
-    // .from($('.contenido'), 1, {display: 'none', ease: Power2.easeIN })
-    // .from($('#panel'), 1, { x: '-1000%', ease: Power2.easeIN })
+    new TimelineMax()
+    .from($('.primero'), 1, { x: '1000%', ease: Power2.easeIN })
+    .from($('.segundo'), 1, { x: '-1000%', ease: Power2.easeIN }, "-=1")
+    .fromTo($('#panel'), 2, {opacity: '0'}, { opacity: '1', ease: Power2.easeIN})
+
 
     Servicios.obtener().then(res => {
         $scope.servicios = res.data;
@@ -20,10 +18,10 @@ app.controller('consultaCtrl', function($scope, $window, $rootScope, $analytics,
 
     $scope.peticion = {
         offset: 0,
-        limit: 6
+        limit: 3
     }
 
-    self.usuario = false; 
+    self.usuario = false;
 
     self.ventana = function(key) {
 
@@ -106,6 +104,8 @@ app.controller('consultaCtrl', function($scope, $window, $rootScope, $analytics,
 
     $scope.currentPage = 0;
 
+
+
     function filtro(peticion) {
 
         let x = peticion
@@ -115,6 +115,14 @@ app.controller('consultaCtrl', function($scope, $window, $rootScope, $analytics,
         Topicos.filtro(x).then(res => {
             console.log(res.data)
             self.topicos = res.data.map((n, key) => new Pregunta(n, key))
+
+            const blaaa = new TimelineMax()
+
+            res.data.forEach((n , k) => {
+                console.log(k)
+                blaaa.from($('.clase' + k), 10, { x: '1000%', ease: Power2.easeIN})
+            })
+
 
             // $mdExpansionPanelGroup().waitFor('consulta').then(instance => {
             //     self.topicos.forEach((n, key) => {

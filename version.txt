@@ -7,3 +7,4 @@
 #14 DIC - Cesar - Se cambio el color del nav en los states de "servicios" y "Nosotros" a color negro
 #15 DIC - Cesar - Se termino de hacer responsive la pagina.
 #30 DIC - Ulises - Se creo un slider para decir que somos un Bufette
+#13 FEB - Ulises - Se puso el blur

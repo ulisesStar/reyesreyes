@@ -2,35 +2,10 @@ var app = angular.module('myapp');
 
 app.controller('nosotrosCtrl', function($scope, $rootScope, $http, $mdDialog, mdDialog, $timeout, $mdSidenav, $state, $stateParams) {
 
-
-	// var width = window.innerWidth;
-	// var height = window.innerHeight;
-    //
-	// var stage = new Konva.Stage({
-	//   container: 'opacity',
-	//   width: width,
-	//   height: height
-	// });
-    //
-	// var layer = new Konva.Layer();
-    //
-	// var rect = new Konva.Rect({
-	//   x: 0,
-	//   y: 0,
-	//   width: $('.parrafo').width(),
-	//   height: $('.parrafo').height(),
-	//   fill: 'white',
-	//   stroke: 'black',
-	//   strokeWidth: 4
-	// })
-    //
-	// rect.filters([Konva.Filters.Blur]);
-    //
-	// // add the shape to the layer
-	// layer.add(rect);
-    //
-	// // add the layer to the stage
-	// stage.add(layer);
-
+    new TimelineMax()
+    .from($('.primero'), 1, { x: '-1000%', ease: Power2.easeIN })
+    .from($('.descripcion'), 1, { x: '1000%', ease: Power2.easeIN }, "-=.5")
+    .from($('.informacion'), 1, { x: '1000%', ease: Power2.easeIN }, "-=.5")
+    .fromTo($('.opacity'), 1, {opacity: '0'}, { opacity: '1', ease: Power2.easeIN}, "-=.9")
 
 });

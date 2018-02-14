@@ -1,10 +1,15 @@
-.consulta(style="background-image : url ('img/consulta.jpg')")
+.consulta
     .titulo-consulta
-        h1.primero EN REYES REYES QUEREMOS DARTE EL MEJOR SERVICIO
-        h1.segundo CONTESTAMOS TUS DUDAS SOBRE EL SISTEMA PENAL EN LA CIUDAD DE MEXICO          
+        .titulo.primero
+            h1 SÓMOS UN BUFFETE DE EXITOS
+        .titulo.segundo
+            h1 CONOCÉ LA CLAUSULA DE EXITO EN NUESTROS SERVICIO     
     .contenido(layout="row")
         .panel#panel
             .panel-contenido
+                md-toolbar
+                    .md-toolbar-tools
+                        p En Reyes Reyes contestamos tus dudas sobre el sistema penal en México
                 md-autocomplete(flex
                     md-selected-item="ctrl.autocomplete.item"
                     md-selected-item-change="ctrl.autocomplete.seleccion(item)"
@@ -17,7 +22,7 @@
                     md-item-template
                         strong {{item.modelo}}
                         span {{item.nombre}} {{item.apellido}}
-                md-expansion-panel#circulo(md-component-id='{{elemento.key}}' ng-repeat="elemento in ctrl.topicos" ng-if="elemento.display")
+                md-expansion-panel#circulo(md-component-id='{{elemento.key}}' ng-repeat="elemento in ctrl.topicos" ng-if="elemento.display" class="{{elemento.id}}")
                     md-expansion-panel-collapsed(ng-click="elemento.abrir()")
                         md-expansion-panel-icon
                         .md-title

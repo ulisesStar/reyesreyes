@@ -4,18 +4,6 @@ app.controller('homeCtrl', function($scope, $transitions, $rootScope, $http, $md
 
     var self = this;
 
-    // app.run(function($rootScope, $transitions, $timeout) {
-    //     $transitions.onStart({}, trans => {
-    //         $rootScope.loading = true;
-    //         $timeout.cancel()
-    //
-    //     });
-    //
-    //     $transitions.onSuccess({}, trans => {
-    //         $rootScope.loading = false;
-    //     });
-    // })
-
     const estados = [
         { nombre :  'home.consulta', background : 'img/consulta.jpeg'},
         { nombre :  'home.nosotros', background : 'img/nosotros.jpg'},
@@ -28,15 +16,6 @@ app.controller('homeCtrl', function($scope, $transitions, $rootScope, $http, $md
     $transitions.onStart({}, trans => {
         $scope.actual = estados.find(n => n.nombre === $state.current.name);
     });
-
-
-
-    // function estadito(){
-    //
-    //     // $scope.$digest()
-    // };
-    //
-    // estadito()
 
     $scope.cambiar = (valor) => {
         self.indicador = valor

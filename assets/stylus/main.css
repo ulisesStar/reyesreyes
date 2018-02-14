@@ -1,3 +1,29 @@
+@font-face {
+  font-family: Montserrat;
+  font-weight: 400;
+  src: url("../fonts/Montserrat/Montserrat-Black.ttf");
+}
+.titulo h1 {
+  color: #fff;
+  margin: 0px;
+  display: inline-flex;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .titulo h1 {
+    font-size: 15px;
+  }
+}
+.titulo.primero h1 {
+  font-family: Montserrat;
+  font-size: 50px;
+  padding: 0 18px;
+  border: 5px solid #fff;
+}
+.titulo.segundo h1 {
+  background-color: #000;
+  padding: 20px;
+}
 .pageleft.ng-enter {
   -webkit-animation: fadeInLeft 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   animation: fadeInLeft 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
@@ -202,242 +228,193 @@ md-dialog {
 }
 .consulta {
   width: 100%;
-  margin-top: 5%;
+  min-height: calc(100vh - 100px);
 }
 @media (max-width: 600px) {
-  .consulta {
-    margin-top: 19%;
-  }
 }
-.consulta .titulo-consulta h1 {
-  color: #fff;
-  text-align: center;
+.titulo-consulta {
+  padding: 5% 0;
 }
-@media (max-width: 600px) {
-  .consulta .titulo-consulta h1 {
-    font-size: 15px;
-  }
+.titulo-consulta .titulo {
+  display: flex;
 }
-.consulta .panel {
+.titulo-consulta .titulo.segundo {
+  justify-content: flex-end !important;
+}
+.panel {
   position: relative;
   width: 100%;
   overflow: hidden;
 }
-.consulta .panel .panel-contenido {
+.panel .panel-contenido {
   position: relative;
   z-index: 1;
 }
-.consulta .panel .panel-contenido md-expansion-panel {
+.panel .panel-contenido md-toolbar {
+  background-color: #000;
+}
+.panel .panel-contenido md-toolbar p {
+  color: #fff;
+}
+.panel md-expansion-panel {
   box-shadow: none;
   background-color: inherit !important;
   background: none !important;
   opacity: 0.9;
 }
-.consulta .panel .panel-contenido md-expansion-panel md-expansion-panel-collapsed {
+.panel md-expansion-panel md-expansion-panel-collapsed {
   height: 60px;
   background: none !important;
 }
-.consulta .panel .panel-contenido md-expansion-panel md-expansion-panel-collapsed .md-expansion-panel-icon {
+.panel md-expansion-panel md-expansion-panel-collapsed .md-expansion-panel-icon {
   margin-right: 30px;
   margin-left: 30px;
   transform: scale(2.2) rotate(90deg);
 }
-.consulta .panel .panel-contenido md-expansion-panel md-expansion-panel-collapsed .md-expansion-panel-icon svg {
+.panel md-expansion-panel md-expansion-panel-collapsed .md-expansion-panel-icon svg {
   fill: #fff !important;
 }
-.consulta .panel .panel-contenido md-expansion-panel md-expansion-panel-collapsed .md-title {
+.panel md-expansion-panel md-expansion-panel-collapsed .md-title {
   max-width: inherit;
   color: #fff;
 }
-.consulta .panel .panel-contenido md-expansion-panel md-expansion-panel-collapsed .md-title p {
+.panel md-expansion-panel md-expansion-panel-collapsed .md-title p {
   line-height: 60px;
   margin: 0px;
 }
-.consulta .panel .panel-contenido md-expansion-panel md-expansion-panel-expanded md-expansion-panel-header {
+.panel md-expansion-panel md-expansion-panel-expanded md-expansion-panel-header {
   background-color: #deb887;
 }
-.consulta .panel .panel-contenido md-expansion-panel md-expansion-panel-expanded md-expansion-panel-header .md-expansion-panel-header-container {
+.panel md-expansion-panel md-expansion-panel-expanded md-expansion-panel-header .md-expansion-panel-header-container {
   background: inherit !important;
   line-height: 19px;
 }
-.consulta .panel .panel-contenido md-expansion-panel md-expansion-panel-expanded md-expansion-panel-header .md-expansion-panel-header-container h3 {
+.panel md-expansion-panel md-expansion-panel-expanded md-expansion-panel-header .md-expansion-panel-header-container h3 {
   color: #fff;
 }
-.consulta .panel .panel-contenido md-expansion-panel md-expansion-panel-expanded md-expansion-panel-content {
+.panel md-expansion-panel md-expansion-panel-expanded md-expansion-panel-content {
   background-color: #fff;
 }
-.consulta .panel .panel-contenido md-expansion-panel md-expansion-panel-expanded md-expansion-panel-footer {
+.panel md-expansion-panel md-expansion-panel-expanded md-expansion-panel-footer {
   background-color: #fff;
 }
-.consulta .panel .panel-contenido md-expansion-panel md-expansion-panel-expanded md-expansion-panel-footer .md-expansion-panel-footer-container {
+.panel md-expansion-panel md-expansion-panel-expanded md-expansion-panel-footer .md-expansion-panel-footer-container {
   padding: 0px;
 }
-.consulta .panel .panel-contenido md-expansion-panel md-expansion-panel-expanded md-expansion-panel-footer .md-expansion-panel-footer-container .md-button {
+.panel md-expansion-panel md-expansion-panel-expanded md-expansion-panel-footer .md-expansion-panel-footer-container .md-button {
   border: inherit;
   border-radius: 0px;
   height: 48px;
   width: 100%;
   margin: 0px;
 }
-.consulta .panel .panel-contenido md-expansion-panel md-expansion-panel-expanded md-expansion-panel-footer .md-expansion-panel-footer-container .md-button md-icon {
+.panel md-expansion-panel md-expansion-panel-expanded md-expansion-panel-footer .md-expansion-panel-footer-container .md-button md-icon {
   color: #deb887;
 }
-.consulta .panel .panel-contenido md-expansion-panel md-expansion-panel-expanded md-icon {
+.panel md-expansion-panel md-expansion-panel-expanded md-icon {
   transform: scale(1.8) !important;
   color: inherit !important;
 }
-.consulta .panel .panel-contenido cl-paging .paginacion .md-button {
+.panel cl-paging .paginacion .md-button {
   max-height: inherit !important;
   max-width: inherit !important;
   border: none;
   margin: 0px;
   border-radius: 0px;
 }
-.consulta .panel .panel-contenido cl-paging .paginacion .md-button.first,
-.consulta .panel .panel-contenido cl-paging .paginacion .md-button.last {
+.panel cl-paging .paginacion .md-button.first,
+.panel cl-paging .paginacion .md-button.last {
   background-color: #fff;
 }
-.consulta .panel .panel-contenido cl-paging .paginacion .md-button.first md-icon,
-.consulta .panel .panel-contenido cl-paging .paginacion .md-button.last md-icon {
+.panel cl-paging .paginacion .md-button.first md-icon,
+.panel cl-paging .paginacion .md-button.last md-icon {
   color: #333;
 }
-.consulta .panel .panel-contenido cl-paging .paginacion .md-button span {
+.panel cl-paging .paginacion .md-button span {
   color: #fff;
   font-size: 21px;
 }
-.valores {
-  margin-top: 5%;
+.valores .titulo {
+  display: flex;
+  justify-content: flex-end;
 }
 @media (max-width: 600px) {
-  .valores {
-    margin-top: 19%;
-  }
 }
-.valores h1 {
-  color: #fff;
-  text-align: center;
-}
-@media (max-width: 600px) {
-  .valores h1 {
-    font-size: 15px;
-  }
-}
-.valores .titulo-razones h1 {
-  color: #fff;
-  text-align: center;
-}
-@media (max-width: 600px) {
-  .valores .titulo-razones h1 {
-    font-size: 15px;
-    margin-top: 11%;
-  }
-}
-@media (max-width: 600px) {
-  .valores .contenido {
-    min-height: 65%;
-  }
-}
-.valores .contenido .portafolio {
-  overflow: hidden;
-  margin: 0 1vw;
-}
-.valores .contenido .portafolio .portafolio-img {
-  height: 18%;
-  width: 100%;
-  z-index: 1;
-  background-size: cover;
-  background-position: center center;
-}
-@media (max-width: 600px) {
-  .valores .contenido .portafolio .portafolio-img {
-    height: 22%;
-  }
-}
-.valores .contenido .portafolio .portafolio-text {
-  z-index: 1;
-  opacity: 0.7;
-}
-@media (max-width: 600px) {
-  .valores .contenido .portafolio .portafolio-text {
-    height: 22%;
-  }
-}
-.valores .contenido .portafolio .portafolio-text h2 {
-  padding: 0 15px;
-  margin: 5px;
-  color: #fff;
-}
-.valores .contenido .portafolio .portafolio-text p {
-  color: #fff;
-  font-size: 13px;
-  margin: 0px;
-  padding: 11px;
-  text-align: justify;
-}
-@media (max-width: 600px) {
-  .valores .contenido .portafolio .portafolio-text p {
-    padding: 3px;
-  }
-}
-.valores .razones {
+.razones {
+  position: relative;
   overflow: hidden;
 }
 @media (max-width: 600px) {
-  .valores .razones {
+  .razones {
     max-width: inherit !important;
   }
 }
-.valores .razones md-list {
+.razones md-list {
   position: relative;
   z-index: 1;
   margin: 0px;
   padding: 0px;
 }
-.valores .razones md-list h4 {
-  padding: 0 30px;
-  color: #fff;
+.razones md-list md-list-item {
+  margin: 30px 0;
+  min-height: 80px;
 }
-.valores .razones md-list p {
+.razones md-list md-list-item .numero {
+  line-height: 80px;
+  padding: 0 20px;
+}
+.razones md-list md-list-item .numero span {
+  font-size: 30px;
+  color: #fff;
+  font-family: Montserrat;
+}
+.razones md-list md-list-item .md-list-item-text h4 {
+  color: #fff;
+  font-size: 25px;
+  font-family: Montserrat;
+}
+.razones md-list md-list-item .md-list-item-text p {
   color: #fff;
   font-size: 14px;
   margin: 0px;
   text-align: justify;
 }
-.valores .razones md-list .md-avatar-icon {
-  background-color: #fff;
-}
-.valores .razones md-list .md-avatar-icon span {
-  font-size: 14px;
-  color: #000;
-}
-.valores .testimonios {
-  background-color: #deb887;
+.testimonios {
+  background-color: #000;
   opacity: 0.9;
+  display: flex;
+  justify-content: center;
 }
-.valores .testimonios .slider {
-  height: 200px;
+.slider {
+  height: 130px;
+  width: 500px;
 }
-.valores .testimonios .slider .item {
-  margin: 40px;
+.item {
   height: 120px;
-  margin-top: 1%;
 }
-.valores .testimonios .slider .item p {
+.item h4 {
+  color: #fff;
+}
+.item p {
   font-style: italic;
   text-align: right;
   font-size: 14px;
+  color: #fff;
 }
-.servicios h1 {
+.servicios {
+  width: 100%;
+}
+h1 {
   color: #fff;
   text-align: center;
 }
 @media (max-width: 600px) {
-  .servicios h1 {
+  h1 {
     font-size: 15px;
     margin-top: 19%;
   }
 }
-.servicios md-grid-tile {
+md-grid-tile {
   background-size: cover;
 }
 .opacity {
@@ -533,99 +510,42 @@ md-dialog {
 .formulario .mensaje md-card-content h1 {
   color: #deb887;
 }
-@media (max-width: 600px) {
-  .nosotros {
-    margin-top: 19%;
-  }
+.nosotros .primero {
+  display: flex;
+  justify-content: flex-end;
+  margin: 30px 0;
 }
-.nosotros h1 {
-  height: 3%;
-  color: #fff;
-  text-align: center;
-}
-@media (max-width: 600px) {
-  .nosotros h1 {
-    font-size: 15px;
-  }
-}
-.nosotros .contenido p {
-  color: #fff;
-  text-align: center;
-  font-size: 20px;
-}
-@media (max-width: 600px) {
-  .nosotros .contenido p {
-    text-align: justify;
-    font-size: 15px;
-  }
-}
-.nosotros .nosotros-container .informacion-container .foto {
-  padding: 3%;
-}
-.nosotros .nosotros-container .informacion-container .foto img {
-  width: 100%;
-  height: auto;
-}
-.nosotros .nosotros-container .informacion-container .parrafo {
-  overflow: hidden;
-  position: relative;
-  padding: 5px;
-  text-align: justify;
-  color: #fff;
-  width: 100%;
-}
-@media (max-width: 600px) {
-  .nosotros .nosotros-container .informacion-container .parrafo {
-    max-width: inherit !important;
-  }
-}
-.nosotros .nosotros-container .informacion-container .parrafo .parrafo-content {
-  position: relative;
-  z-index: 1;
-}
-.nosotros .nosotros-container .informacion-container .parrafo .parrafo-content h4 {
-  font-size: 22px;
-}
-@media (max-width: 600px) {
-  .nosotros .nosotros-container .informacion-container .parrafo .parrafo-content h4 {
-    text-align: center;
-  }
-}
-.nosotros .nosotros-container .informacion-container .parrafo .parrafo-content p {
-  font-size: 17px;
-}
-.nosotros .nosotros-container .identidad h1 {
-  color: #fff;
-  text-align: center;
-}
-@media (max-width: 600px) {
-  .nosotros .nosotros-container .identidad h1 {
-    font-size: 15px;
-  }
-}
-.nosotros .nosotros-container .identidad .contenido .valor {
+.nosotros .informacion-content {
   overflow: hidden;
   position: relative;
 }
-@media (max-width: 600px) {
-  .nosotros .nosotros-container .identidad .contenido .valor {
-    padding: 3%;
-    margin-bottom: 5%;
-    opacity: 0.85;
-    min-height: inherit;
-  }
-}
-.nosotros .nosotros-container .identidad .contenido .valor .valor-content {
+.nosotros .informacion-content .descripcion {
   z-index: 1;
-  padding: 1%;
-  position: relative;
-  margin-right: 1%;
 }
-.nosotros .nosotros-container .identidad .contenido .valor h1 {
-  font-size: 23px;
+.nosotros .informacion-content .descripcion p {
+  color: #fff;
+  padding: 20px;
 }
-.nosotros .nosotros-container .identidad .contenido .valor p {
-  font-size: 15px;
+.nosotros .informacion-content .informacion {
+  z-index: 1;
+}
+.nosotros .informacion-content .informacion .foto {
+  display: flex;
+  align-items: center;
+}
+.nosotros .informacion-content .informacion .foto img {
+  margin: 20px;
+  height: 100px;
+}
+.nosotros .informacion-content .informacion .parrafo {
+  color: #fff;
+  flex: 1;
+}
+.nosotros .informacion-content .informacion .parrafo h4 {
+  font-size: 30px;
+  margin: 0px;
+  color: #fff;
+  font-family: Montserrat;
 }
 .servicio-one {
   margin-top: 8%;

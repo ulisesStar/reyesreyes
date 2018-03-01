@@ -1,7 +1,7 @@
 @font-face
-    font-family Montserrat
-    font-weight 400
-    src url('../fonts/Montserrat/Montserrat-Black.ttf')
+	font-family Montserrat
+	font-weight 400
+	src url('../fonts/Montserrat/Montserrat-Black.ttf')
 
 cafeclaro = #deb887
 gris = #333
@@ -12,60 +12,61 @@ compu = "(min-width: 600px)"
 
 
 transition(duracion, delay)
-    -webkit-transition all duracion cubic-bezier(0.445, 0.050, 0.550, 0.950)
-    transition all duracion cubic-bezier(0.445, 0.050, 0.550, 0.950)
-    -webkit-transition-delay delay ease-in-out
-    transition-delay delay ease-in-out
+	-webkit-transition all duracion cubic-bezier(0.445, 0.050, 0.550, 0.950)
+	transition all duracion cubic-bezier(0.445, 0.050, 0.550, 0.950)
+	-webkit-transition-delay delay ease-in-out
+	transition-delay delay ease-in-out
 
 animation(animation, duration = 1s)
-    -webkit-animation animation duration cubic-bezier(0.445, 0.050, 0.550, 0.950)
-    animation animation duration cubic-bezier(0.445, 0.050, 0.550, 0.950)
-    -webkit-transition all duration ease-in-out
-    -moz-transition all duration ease-in-out
-    -o-transition all duration ease-in-out
-    transition all duration ease-in-out
+	-webkit-animation animation duration cubic-bezier(0.445, 0.050, 0.550, 0.950)
+	animation animation duration cubic-bezier(0.445, 0.050, 0.550, 0.950)
+	-webkit-transition all duration ease-in-out
+	-moz-transition all duration ease-in-out
+	-o-transition all duration ease-in-out
+	transition all duration ease-in-out
 
 .titulo
-    h1
-        color white
-        margin 0px
-        display inline-flex
-        text-align center
-        @media mobile
-            font-size 15px
-    &.primero
-        h1
-            font-family Montserrat
-            font-size 50px
-            padding 0 18px
-            border 5px solid white
-    &.segundo
-        h1
-            background-color black
-            padding 20px
+	h1
+		color white
+		margin 0px
+		display inline-flex
+		text-align center
+		@media mobile
+			font-size 15px
+	&.primero
+		h1
+			font-family Montserrat
+			font-size 50px
+			padding 0 18px
+			border 5px solid white
+	&.segundo
+		h1
+			background-color black
+			padding 20px
 
 
 .pageleft
-    &.ng-enter
-        animation(fadeInLeft)
-    &.ng-leave
-        animation(fadeOutRight)
+	&.ng-enter
+		animation(fadeInLeft)
+	&.ng-leave
+		animation(fadeOutRight)
 
 .pageright
-    &.ng-enter
-        animation(fadeInRight)
-    &.ng-leave
-        animation(fadeOutLeft)
+	&.ng-enter
+		animation(fadeInRight)
+	&.ng-leave
+		animation(fadeOutLeft)
+
+
 
 .layout-row>div
 	max-height inherit !important
-
 
 body, html
 	background-color inherit
 
 md-backdrop
-	opacity .95 !important
+	opacity 1 !important
 
 main
 	position relative
@@ -103,15 +104,19 @@ header
 						margin-left 3px
 
 md-dialog
-	width 28vw !important
 	background-color rgba(255,255,255,0.9)
+	@media compu
+		width 60vw !important
+
 
 .prospecto-content
 	md-card-content
 		form
 			margin 20px
 			.md-button
-				background green
+				background-color black
+				border-radius 0px
+				color white
 			md-card-content
 				md-input-container
 					margin 0px !important
@@ -168,7 +173,7 @@ md-dialog
 					width 70px
 					margin 0 auto
 					transform scale(.7)
-			    	margin-left 1%
+					margin-left 1%
 
 
 			&.right
@@ -194,27 +199,27 @@ md-dialog
 
 
 .consulta
-    width 100%
-    min-height calc(100vh - 100px)
+	width 100%
+	min-height calc(100vh - 100px)
 	@media mobile
 		margin-top 19%
 	.titulo-consulta
-        padding 5% 0
-        .titulo
-            display flex
-            &.segundo
-                justify-content flex-end !important
+		padding 5% 0
+		.titulo
+			display flex
+			&.segundo
+				justify-content flex-end !important
 	.panel
 		position relative
 		width 100%
 		overflow hidden
 		.panel-contenido
-            position relative
-            z-index 1
-            md-toolbar
-                background-color black
-                p
-                    color white
+			position relative
+			z-index 1
+			md-toolbar
+				background-color black
+				p
+					color white
 			md-expansion-panel
 				box-shadow none
 				background-color inherit !important
@@ -278,60 +283,60 @@ md-dialog
 							font-size 21px
 
 .valores
-    .titulo
-        display flex
-        justify-content flex-end
+	.titulo
+		display flex
+		justify-content flex-end
 	@media mobile
 		margin-top 19%
 	.razones
-        position relative
-        overflow hidden
-        @media mobile
-            max-width inherit !important
-        md-list
-            position relative
-            z-index 1
-            margin 0px
-            padding 0px
-            md-list-item
-                margin 30px 0
-                min-height 80px
-                .numero
-                    line-height 80px
-                    padding 0 20px
-                    span
-                        font-size 30px
-                        color white
-                        font-family Montserrat
-                .md-list-item-text
-                    h4
-                        color white
-                        font-size 25px
-                        font-family Montserrat
-                    p
-                        color white
-                        font-size 14px
-                        margin 0px
-                        text-align justify
+		position relative
+		overflow hidden
+		@media mobile
+			max-width inherit !important
+		md-list
+			position relative
+			z-index 1
+			margin 0px
+			padding 0px
+			md-list-item
+				margin 30px 0
+				min-height 80px
+				.numero
+					line-height 80px
+					padding 0 20px
+					span
+						font-size 30px
+						color white
+						font-family Montserrat
+				.md-list-item-text
+					h4
+						color white
+						font-size 25px
+						font-family Montserrat
+					p
+						color white
+						font-size 14px
+						margin 0px
+						text-align justify
 	.testimonios
-        background-color black
-        opacity .9
-        display flex
-        justify-content center
+		background-color black
+		opacity .9
+		display flex
+		justify-content center
 		.slider
-            height 130px
-            width 500px
+			height 130px
+			width 500px
 			.item
-                height 120px
-                h4
-                    color white
-                p
-                    font-style italic
-                    text-align right
-                    font-size 14px
-                    color white
+				height 120px
+				h4
+					color white
+				p
+					font-style italic
+					text-align right
+					font-size 14px
+					color white
 .servicios
-    width 100%
+	width 100%
 	h1
 		color white
 		text-align center
@@ -435,34 +440,34 @@ md-dialog
 				color cafeclaro
 
 .nosotros
-    .primero
-        display flex
-        justify-content flex-end
-        margin 30px 0
-    .informacion-content
-        overflow hidden
-        position relative
-        .descripcion
-            z-index 1
-            p
-                color white
-                padding 20px
-        .informacion
-            z-index 1
-            .foto
-                display flex
-                align-items center
-                img
-                    margin 20px
-                    height 100px
-            .parrafo
-                color white
-                flex 1
-                h4
-                    font-size 30px
-                    margin 0px
-                    color white
-                    font-family Montserrat
+	.primero
+		display flex
+		justify-content flex-end
+		margin 30px 0
+	.informacion-content
+		overflow hidden
+		position relative
+		.descripcion
+			z-index 1
+			p
+				color white
+				padding 20px
+		.informacion
+			z-index 1
+			.foto
+				display flex
+				align-items center
+				img
+					margin 20px
+					height 100px
+			.parrafo
+				color white
+				flex 1
+				h4
+					font-size 30px
+					margin 0px
+					color white
+					font-family Montserrat
 
 
 .servicio-one

@@ -109,6 +109,8 @@ ex.filtro = function(req, res, next) {
 
     console.log(data)
 
+    data.order = ['popularidad']
+
     data.include = [
         {model: respuestas}
     ]

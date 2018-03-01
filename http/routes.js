@@ -50,7 +50,7 @@ router.get("/admin", function(req, res) {
 
 router.get('/robots.txt', function (req, res) {
     res.type('text/plain');
-    res.send("User-agent: *\nDisallow: /");
+    res.send("User-agent: *");
 });
 
 router.get("/user/:url", function(req, res) {

@@ -5,7 +5,8 @@ var ex = function(conector) {
 
     var Topicos = sequelize.define('topicos', {
         id:{ type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true},
-        nombre: Sequelize.TEXT
+        nombre: Sequelize.TEXT,
+        popularidad: Sequelize.INTEGER
     })
 
     return Topicos;
